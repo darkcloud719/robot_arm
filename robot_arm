@@ -1,0 +1,66 @@
+#include<Servo.h>
+Servo myservo[7]; 
+
+int r1_pin = 2; 
+int r1_val;
+int r2_pin = 3;
+int r2_val;
+int r3_pin = 4;
+int r3_val;
+int r4_pin = 5;
+int r4_val;
+int r5_pin = 6;
+int r5_val;
+int r6_pin = 7;
+int r6_val;
+int r7_pin = 8;
+int r7_val;
+
+void setup()
+{
+  myservo[0].attach(11);
+  myservo[1].attach(A0);
+  myservo[2].attach(A1);
+  myservo[3].attach(A2);
+  myservo[4].attach(A3);
+  myservo[5].attach(A4);
+  myservo[6].attach(A5);
+}
+
+void loop()
+{
+  r1_val = analogRead(r1_pin);
+  r1_val = value_map(r1_val);
+  myservo[0].write(r1_val);
+
+  r2_val = analogRead(r2_pin);
+  r2_val = value_map(r2_val);
+  myservo[1].write(r2_val);
+
+  r3_val = analogRead(r3_pin);
+  r3_val = value_map(r3_val);
+  myservo[2].write(r3_val);
+
+  r4_val = analogRead(r4_pin);
+  r4_val = value_map(r4_val);
+  myservo[3].write(r4_val);
+
+  r5_val = analogRead(r5_pin);
+  r5_val = value_map(r5_val);
+  myservo[4].write(r5_val);
+
+  r6_val = analogRead(r6_pin);
+  r6_val = value_map(r6_val);
+  myservo[5].write(r6_val);
+
+  r7_val = analogRead(r7_pin);
+  r7_val = value_map(r7_val);
+  myservo[6].write(r7_val);
+
+  delay(15);
+}
+
+int value_map(int val)
+{
+  return map(val,0,1023,0,179);
+}
