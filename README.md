@@ -1,4 +1,4 @@
-# robot_arm
+# Side-Project 1 機械手臂(machine arm)
 
 Arduino for machine arm 
 
